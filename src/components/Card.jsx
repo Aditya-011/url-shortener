@@ -13,15 +13,19 @@ function Card() {
   function getResult() {
     TinyURL.shorten(url).then(
       function (res) {
-        console.log(`The url is ${url} and result is ${res}`);
-        setResult(res);
+        // console.log(`The url is ${url} and result is ${res}`);
+        // const data;
+        if (res === "Error") {
+          setResult("Link not found");
+        } else {
+          setResult(res);
+        }
       },
       function (err) {
-        // console.log(err);
+        console.log(err);
       }
     );
   }
-  function display(url) {}
   return (
     <div>
       <div className="background">
