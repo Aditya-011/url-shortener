@@ -32,15 +32,12 @@ function Card() {
         <div className="card">
           <h1>URL Shortener</h1>
           <div className="input">
-            <p>Enter the URL to be shrinked : </p>
-            <input type="text" value={url} onChange={getUrl} />
+            <input type="text" value={url} onChange={getUrl}></input>
             <button onClick={getResult}>Submit</button>
-          </div>
-          <div className="output">
-            <Result output={result}></Result>
           </div>
         </div>
       </div>
+      <Result output={result}></Result>
     </div>
   );
 }
