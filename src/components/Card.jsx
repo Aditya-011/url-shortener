@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 const Result = require("./Result").default;
 const TinyURL = require("tinyurl");
 
@@ -11,32 +12,42 @@ function Card() {
     // console.log(url);
   }
   function getResult() {
-    TinyURL.shorten(url).then(
-      function (res) {
-        // console.log(`The url is ${url} and result is ${res}`);
-        // const data;
-        if (res === "Error") {
-          setResult("Link not found");
-        } else {
-          setResult(res);
+    if (url) {
+      TinyURL.shorten(url).then(
+        function (res) {
+          // console.log(`The url is ${url} and result is ${res}`);
+          // const data;
+          if (res === "Error") {
+            toast.error("Link not found");
+            setResult("error");
+          } else {
+            setResult(res);
+          }
+        },
+        function (err) {
+          console.log(err);
         }
-      },
-      function (err) {
-        console.log(err);
-      }
-    );
+      );
+    } else {
+      toast.error("Please enter a URL");
+    }
   }
+  React.useEffect(() => {
+    if (result === "error") {
+    }
+  }, [result]);
   return (
-    <div>
-      <div className="background">
-        <div className="card">
-          <h1>URL Shortener</h1>
-          <div className="input">
-            <input type="text" value={url} onChange={getUrl}></input>
-            <button onClick={getResult}>Submit</button>
-          </div>
+    <div className="card">
+      <Toaster position="top-right" reverseOrder={false} />
+      <header>
+        {" "}
+        <h1>Shrink your URLs</h1>
+        <div className="input">
+          <input type="text" value={url} onChange={getUrl} />
+          <button onClick={getResult}>Shrink</button>
         </div>
-      </div>
+      </header>
+
       <Result output={result}></Result>
     </div>
   );
