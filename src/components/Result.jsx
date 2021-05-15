@@ -2,10 +2,14 @@ import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 const Result = (props) => {
-  const [copy, setCopy] = React.useState({
-    value: "",
-    copied: false,
-  });
+  var result = props.output;
+
+  const [isCopied, setIsCopied] = React.useState(false);
+  const onCopyText = () => {
+    setIsCopied(true);
+  };
+
+  //console.log(copy);
   if (props.output) {
     return (
       <>
@@ -23,20 +27,17 @@ const Result = (props) => {
             <p> Copy link</p>
             <div class="field">
               <i class="url-icon uil uil-link"></i>
-              <input value={props.output} readOnly text />
-
-              <CopyToClipboard
-                text={copy.value}
-                onCopy={() => setCopy({ value: props.output, copied: true })}
-              >
+              <input type="text" value={result} readOnly className="result" />
+              <CopyToClipboard text={result} onCopy={onCopyText}>
                 <button
+                  className="btn"
                   onClick={() => {
                     toast.success("Copied ", {
                       icon: "👏",
                     });
                   }}
                 >
-                  Copy to clipboard with button
+                  Copy
                 </button>
               </CopyToClipboard>
             </div>
