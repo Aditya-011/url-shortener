@@ -17,11 +17,7 @@ const Result = (props) => {
             <p> Copy link</p>
             <div class="field">
               <i class="url-icon uil uil-link"></i>
-              <input
-                type="text"
-                readonly
-                value="example.com/share-link"
-              ></input>
+              <input type="text" readonly value={props.output}></input>
               <button>Copy</button>
             </div>
           </div>
