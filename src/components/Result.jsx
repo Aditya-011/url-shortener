@@ -1,5 +1,5 @@
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 const Result = (props) => {
   var result = props.output;
@@ -7,6 +7,7 @@ const Result = (props) => {
   const [isCopied, setIsCopied] = React.useState(false);
   const onCopyText = () => {
     setIsCopied(true);
+    console.log(isCopied);
   };
 
   //console.log(copy);
