@@ -15,12 +15,14 @@ const Result = (props) => {
       <>
         <div class="popup">
           <div className="output">
-            <p>
-              Your shrinked URL:{" "}
-              <a href={props.output} target="_blank" rel="noreferrer">
-                {props.output}
-              </a>
-            </p>
+            <div className="center">
+              <p>
+                Your shrinked URL:{" "}
+                <a href={props.output} target="_blank" rel="noreferrer">
+                  {props.output}
+                </a>
+              </p>
+            </div>
           </div>
           <div class="content">
             <h3 className="center">OR</h3>
