@@ -1,6 +1,6 @@
 # React URL Shortener App
 
-This project was built using react and hosted on hereoku.
+This project was built using react and hosted on netlify.
 You can shrink any URL you want.
 
 ##
