@@ -1,27 +1,46 @@
+
 # React URL Shortener App
 
-This project was built using react and hosted on netlify.
-You can shrink any URL you want.
+This project was built using react and hosted on netlify. You can shrink any URL you want.
 
-##
+## Demo
 
+https://url-shrinker.netlify.app  
+## Deployment
+
+To deploy this project run
+
+```bash
+  yarn start
 ```
-NPM packages used
+
+## NPM packages used
 - react
 - react-hot-toast
 - react-copy-to-clipboard
 - tinyurl
 
-```
+## Features
 
-- For Live demo, [click here:](https://url-shrinker.netlify.app/)
+- click to copy button
+- Simple UI
 
-- <img src="public/images/ss1.png">
-- <img src="public/images/ss2.png">
+  
+## Screenshots
 
-```
-Mobile View
-```
+![App Screenshot](public/images/ss1.png)
+![App Screenshot](public/images/ss2.png)
 
-- <img src="public/images/ss3.png">
-- <img src="public/images/ss4.png">
+Mobile first view
+
+![App Screenshot](public/images/ss3.png)
+![App Screenshot](public/images/ss4.png)
+
+
+
+  
+## Support
+
+For support, email adihgr18@gmail.com
+
+  
